@@ -9,7 +9,7 @@ function Home() {
     <Content style={{ padding: '20px 20px' }}>
         <div className="site-layout-content" style={{textAlign: 'center' }}>
         <h1 className='title'>Welcome to my "Shpora"</h1>
-        <Image src={image} alt={"reactImage"} height={500}/>  
+        <Image src={image} alt={"reactImage"} height={520}/>  
         </div>
     </Content>
   );
