@@ -30,7 +30,7 @@ function App({state}) {
       <HeaderComponent state={state}/>
 
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='components' element={<Components />} />
           <Route path='props' element={<Props />} />
           <Route path='state' element={<State />} />

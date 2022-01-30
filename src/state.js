@@ -2,7 +2,7 @@ const state = {
     menuItems: [
         {
           id: 'home',
-          link: '/home',
+          link: '/',
           name: 'Home'
         },
         {
