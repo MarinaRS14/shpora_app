@@ -8,7 +8,7 @@ function Components() {
         <div className="site-layout-content" style={{textAlign: 'center' }}>
         <h1 className='title'>Компоненты</h1>
         <div className='content'>
-            <h2 className='subtitle'>Компоненты бывают <a href='https://ru.reactjs.org/docs/components-and-props.html#function-and-class-components' target='_blank'>Функциональный и Классовый.</a></h2>
+            <h2 className='subtitle'>Компоненты бывают <a href='https://ru.reactjs.org/docs/components-and-props.html#function-and-class-components' target='_blank' rel="noopener noreferrer">Функциональный и Классовый.</a></h2>
 
         <div className='code'>
             <pre><code>{`function Welcome(props) { 

@@ -18,7 +18,7 @@ function HeaderComponent({state}) {
     <Header>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[selectedMenuItem]}>
         <Menu.Item key={"react"}>
-          <img src={logo} className='app-logo'/>
+          <img src={logo} className='app-logo' alt="logo"/>
           React
         </Menu.Item>
         {menuItem}
