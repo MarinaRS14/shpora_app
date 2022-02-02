@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout} from 'antd';
+import Counter from './examples/Counter';
 const { Content } = Layout;
 
 function State() {
@@ -40,6 +41,13 @@ function State() {
         Классовые компоненты всегда должны вызывать базовый конструктор с аргументом props.
         </p>
 
+        <p>
+          В качестве премера state сделаем счетчик:
+        </p>
+
+        <div className='code'>
+          <Counter />
+        </div>
     
     </div>
     </div>

@@ -94,6 +94,10 @@ ReactDOM.render(
     С помощью e.target.value получаем введенное значение. После обновления новое значение this.state.name отобразится в поле ввода.
     </p>
 
+    <p>
+    <a target='_blank' href='https://formfortrello.herokuapp.com/'><b>Здесь</b></a> можно посмотреть как работает форма.
+    </p>
+
     </div>
     </div>
 </Content>

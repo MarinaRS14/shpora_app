@@ -1,8 +1,18 @@
-import React from 'react';
-import { Layout} from 'antd';
+import React, { useState } from 'react';
+import { Layout, Button, Space} from 'antd';
+import Request from './examples/Request';
 const { Content } = Layout;
 
 function Async() {
+  const [state, setState] = useState([]);
+
+  let addRequest = () => {
+    setState(<Request />)
+  }
+  let delRequest = () => {
+    setState([])
+  }
+
   return (
     <Content style={{ padding: '20px 20px' }}>
     <div className="site-layout-content" style={{textAlign: 'center' }}>
@@ -13,7 +23,7 @@ function Async() {
         </p>
 
         <p>
-        Лучшее место для асинхронного хапроса в методе componentDidMount
+        Лучшее место для асинхронного запроса в методе componentDidMount
         </p>
 
         <h2 className='subtitle'>Пример: Устанавливаем состояние из AJAX-запроса</h2>
@@ -125,8 +135,23 @@ function Async() {
 }`}</code></pre>
     </div>
 
-   
+    <p>
+        Рассмотрим пример:
+    </p>
+    <p>
+        Будем использовать библиотеку axios для получения списка сообщений (аналогично коду, написанному выше). Запрос сделаем на <a target='_blank' href='https://jsonplaceholder.typicode.com/posts'>jsonplaceholder</a>.
+    </p>
+    
+    <div className='code'>
+      <Space>
+        <Button type="primary" onClick={addRequest}>Получить список сообщений</Button>
+        <Button type="primary" onClick={delRequest}>Очистить список сообщений</Button>
+      </Space>
+      
+      {state}
+    </div>
 
+  
     </div>
     </div>
 </Content>
