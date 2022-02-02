@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Request() {
-    let url = "https://jsonplaceholder.typicode.com/posts";
-
     const [message, setMessage] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(url)
+        axios.get('https://jsonplaceholder.typicode.com/posts')
           .then((result) => {
               setIsLoaded(true);
               setMessage(result.data);
@@ -20,7 +18,6 @@ function Request() {
           }
           )
     }, [])
-
     if(error) {
         return <div>Ошибка: {error.message}</div>
     }
