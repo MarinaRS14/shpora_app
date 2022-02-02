@@ -139,7 +139,7 @@ function Async() {
         Рассмотрим пример:
     </p>
     <p>
-        Будем использовать библиотеку axios для получения списка сообщений (аналогично коду, написанному выше). Запрос сделаем на <a target='_blank' href='https://jsonplaceholder.typicode.com/posts'>jsonplaceholder</a>.
+        Будем использовать библиотеку axios для получения списка сообщений (аналогично коду, написанному выше). Запрос сделаем на <a target='_blank' href='https://jsonplaceholder.typicode.com/posts' rel="noopener noreferrer">jsonplaceholder</a>.
     </p>
     
     <div className='code'>

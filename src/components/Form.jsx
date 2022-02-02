@@ -95,7 +95,7 @@ ReactDOM.render(
     </p>
 
     <p>
-    <a target='_blank' href='https://formfortrello.herokuapp.com/'><b>Здесь</b></a> можно посмотреть как работает форма.
+    <a target='_blank' href='https://formfortrello.herokuapp.com/' rel="noopener noreferrer"><b>Здесь</b></a> можно посмотреть как работает форма.
     </p>
 
     </div>
