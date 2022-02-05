@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout} from 'antd';
+import MainComponent from './examples/context/MainComponent';
 const { Content } = Layout;
 
 function Context() {
@@ -56,6 +57,54 @@ function Context() {
     <p>
     Consumer принимает функцию в качестве дочернего компонента.Эта функция принимает текущее значение контекста и возвращает React-компонент. Передаваемый аргумент value будет равен ближайшему (вверх по дереву) значению этого контекста, а именно пропу value компонента Provider. Если такого компонента Provider не существует, аргумент value будет равен значению defaultValue, которое было передано в createContext().
     </p>
+    
+    <p>
+    Рассмотрим пример использования: при нажатии на кнопку будем менять значение, переданной с помощью контекста ("default context value" меняется на "New Value").
+    </p>
+    <div className='code'>
+      <MainComponent /> 
+      <pre><code>{`
+//сначала создадим файл Context.jsx, где создадим контекст.
+  export const Context = React.createContext();
+      
+//компонента MainComponent будет импортировать две компоненты и контекст, которым они оборачиваются, c передачей в value начального состояния (context)
+ и функции для его изменения (setContext).
+ 
+ //MainComponent:
+ function MainComponent() {
+   const [context, setContext] = useState("default context value");
+   return (
+     <Context.Provider value={[context, setContext]}>
+       <ComponentA />
+       <ComponentB />
+     </Context.Provider>
+   );
+ }
+ //Два дочерних компонента импортируют в себя контекст, используя хук useContext  и посредством деструктуризации вытаскивается значение и функция
+  для ее изменения.
+  
+//ComponentA:
+function ComponentA() {
+  const [context, setContext] = useContext(Context);
+return (
+  <div>
+    ComponentA:
+    <Button type="primary" onClick={() => setContext("New Value")}>
+      Change Context Value
+    </Button>
+  </div>
+);
+}
+
+//ComponentB:
+function ComponentB() {
+  const [context, setContext] = useContext(Context);
+  return (
+    <div>ComponentB: {context}</div>
+  );
+}`}</code></pre>
+
+    </div>
     
 
     </div>

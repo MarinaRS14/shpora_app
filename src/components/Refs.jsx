@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout} from 'antd';
+import FocusInput from './examples/FocusInput';
 const { Content } = Layout;
 
 function Refs() {
@@ -80,8 +81,30 @@ function Refs() {
     <ul>
         <li>Когда атрибут ref используется с HTML-элементом, свойство current созданного рефа в конструкторе с помощью React.createRef() получает соответствующий DOM-элемент.</li>
         <li>Когда атрибут ref используется с классовым компонентом, свойство current объекта-рефа получает экземпляр смонтированного компонента.</li>
-        <li><b>Нельзя использовать ref атрибут с функциональными компонентами</b>, потому что для них не создаётся экземпляров.</li>
     </ul>
+
+    <p>
+    Рассмотрим пример использования ref внутри функциональной компоненты.
+    </p>
+
+    <div className='code'>
+        <pre><code>{`function FocusInput() {
+  //textInput должна быть объявлена сверху, чтобы реф мог иметь к ней доступ.
+  const textInput = useRef(null);
+
+  function handleClick() {
+    textInput.current.focus();
+  }
+  return (
+    <div>
+        <input type="text" ref={textInput} />
+        <button onClick={handleClick}>Фокус на поле для ввода текста</button>   
+    </div>
+  );
+}
+  //при нажатии на кнопку инпут будет в фокусе`}</code></pre>
+        <FocusInput />
+    </div>
 
     </div>
     </div>
