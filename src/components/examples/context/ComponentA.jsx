@@ -3,7 +3,7 @@ import {Context} from './Context';
 import { Button } from 'antd';
 
 function ComponentA() {
-    const [context, setContext] = useContext(Context);
+    const [, setContext] = useContext(Context);
   return (
     <div>
       ComponentA:
